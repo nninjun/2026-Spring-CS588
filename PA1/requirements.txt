@@ -1,0 +1,10 @@
+# CS588 PA1 — UKBench retrieval (VGG16 + sklearn NearestNeighbors)
+# Install PyTorch for your platform: https://pytorch.org/get-started/locally/
+# Example (CUDA 12.x): pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+
+torch>=2.0.0
+torchvision>=0.15.0
+numpy>=1.23.0,<3.0.0
+scikit-learn>=1.2.0
+Pillow>=9.0.0
+matplotlib>=3.7.0
