@@ -1,0 +1,11 @@
+name: alfworld_agent
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - alfworld
+    - google-generativeai>=0.8.0
+    - termcolor

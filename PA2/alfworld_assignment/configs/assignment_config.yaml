@@ -1,0 +1,41 @@
+# ALFWorld Assignment Configuration (Text-Only)
+# =============================================
+# Uses AlfredTWEnv (TextWorld) — no AI2-THOR or GPU required.
+
+dataset:
+  data_path: '$ALFWORLD_DATA/json_2.1.1/train'
+  eval_id_data_path: '$ALFWORLD_DATA/json_2.1.1/valid_seen'
+  eval_ood_data_path: '$ALFWORLD_DATA/json_2.1.1/valid_unseen'
+  num_train_games: -1
+  num_eval_games: -1
+
+logic:
+  domain: '$ALFWORLD_DATA/logic/alfred.pddl'
+  grammar: '$ALFWORLD_DATA/logic/alfred.twl2'
+
+env:
+  type: 'AlfredTWEnv'
+  domain_randomization: False
+  task_types: [1, 2, 3, 4, 5, 6]
+  expert_timeout_steps: 150
+  expert_type: "handcoded"
+  goal_desc_human_anns_prob: 0.0
+
+controller:
+  type: 'oracle'
+  debug: False
+  load_receps: True
+
+general:
+  random_seed: 42
+  task: 'alfred'
+  hide_init_receptacles: False
+  training_method: 'dagger'
+  evaluate:
+    run_eval: True
+    env:
+      type: "AlfredTWEnv"
+
+dagger:
+  training:
+    max_nb_steps_per_episode: 30

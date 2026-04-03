@@ -1,0 +1,4 @@
+__pycache__/
+.env
+/report_figures/
+generate_case_figures.py
